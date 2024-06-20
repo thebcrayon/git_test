@@ -1,31 +1,20 @@
-let arr = [5, 3, 8, 1];
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
 
-filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+let users = [ john, pete, mary ];
 
-alert( arr ); // [3, 1]
+let usersMapped = users.map(person => {
 
-function camelize(string) {
-    return string.split('-')
-        .map((word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1))
-        .join('');
-}
+})/* ... your code ... */
 
-function filterRange(arr, a, b) {
-    return arr.filter((num => (num >= a && num <= b)));
-}
+/*
+usersMapped = [
+  { fullName: "John Smith", id: 1 },
+  { fullName: "Pete Hunt", id: 2 },
+  { fullName: "Mary Key", id: 3 }
+]
+*/
 
-function filterRangeInPlace(arr, a, b){
-    for (let i = 0; i < arr.length; i++) {
-        let val = arr[i];
-    
-        // remove if outside of the interval
-        if (val < a || val > b) {
-          arr.splice(i, 1);
-          i--;
-        }
-      }
-}
-
-function testPush (){
-    //adding comment to push back to big machine
-}
+alert( usersMapped[0].id ) // 1
+alert( usersMapped[0].fullName ) // John Smith
