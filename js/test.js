@@ -25,3 +25,7 @@ function filterRangeInPlace(arr, a, b){
         }
       }
 }
+
+function testPush (){
+    
+}
