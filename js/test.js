@@ -1,20 +1,25 @@
-let john = { name: "John", surname: "Smith", id: 1 };
-let pete = { name: "Pete", surname: "Hunt", id: 2 };
-let mary = { name: "Mary", surname: "Key", id: 3 };
+function groupById (arr){
+    return arr.reduce((obj, user) => {
+        obj[user.id] = user;
+        return obj;
+    }, {});
+}
 
-let users = [ john, pete, mary ];
-
-let usersMapped = users.map(person => {
-
-})/* ... your code ... */
-
-/*
-usersMapped = [
-  { fullName: "John Smith", id: 1 },
-  { fullName: "Pete Hunt", id: 2 },
-  { fullName: "Mary Key", id: 3 }
-]
-*/
-
-alert( usersMapped[0].id ) // 1
-alert( usersMapped[0].fullName ) // John Smith
+let users = [
+    {id: 'john', name: "John Smith", age: 20},
+    {id: 'ann', name: "Ann Smith", age: 24},
+    {id: 'pete', name: "Pete Peterson", age: 31},
+  ];
+  
+  let usersById = groupById(users);
+  console.table(usersById);
+  
+  /*
+  // after the call we should have:
+  
+  usersById = {
+    john: {id: 'john', name: "John Smith", age: 20},
+    ann: {id: 'ann', name: "Ann Smith", age: 24},
+    pete: {id: 'pete', name: "Pete Peterson", age: 31},
+  }
+  */
